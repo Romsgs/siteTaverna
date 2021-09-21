@@ -1,0 +1,19 @@
+footer{
+    color: rgb(150, 34, 0);
+    width: 100%;
+    background-color: rgb(35, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    margin-top: 100px;
+}
+
+#tavernaFooter{
+    
+    margin-top:50px;
+    height: 100px;
+
+    
+}

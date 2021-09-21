@@ -12,8 +12,15 @@
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "express-session": "^1.17.2",
+    "express-validator": "^6.12.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5",
     "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
   }
 }

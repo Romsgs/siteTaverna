@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel='stylesheet' href='stylesheets/bodyStyle.css' />
+    <link rel='stylesheet' href='stylesheets/formStyle.css' />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Inserindo Header -->
+    <%- include('./partials/header') %>
+    <main>
+        <form action="/contato">
+            <input type="text" placeholder="Nome" name="nome" id="nome">
+            <input type="text" name="email" id="email" placeholder="email">
+            <textarea name="" id="" cols="30" rows="10" placeholder="manda uma menssagem pra gente!"></textarea>
+            <button type="submit"> Enviar menssagem</button>
+        </form>
+    </main>
+    <%- include('./partials/footer')%>
+</body>
+</html>
+    

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <!-- <link rel='stylesheet' href='stylesheets/headerStyle.css' /> -->
+    <link rel='stylesheet' href='stylesheets/bodyStyle.css' />
+  </head>
+  <body>
+    <%- include('./partials/header') %>
+    <main>
+      <h1>Cadastre-se agora mesmo! </h1>
+      <h3>(é rapidinho!)</h3>
+      <form action="/cadastro" method="POST">
+        <label>
+          <input type="text" placeholder="e-m@il" name="email">
+          <img src="img/icons/i.png" alt="Informação sobre a senha" style="width: 30px;">
+        </label>
+        <label>
+          <input type="password" placeholder="senha" name="senha">
+          <img src="img/icons/i.png" alt="Informação sobre a senha" style="width: 30px;">
+        </label>
+        <button type="submit">CRIAR CONTA</button>
+      </form>
+      
+    </main>
+    <%- include('./partials/footer')%>
+  </body>
+</html>

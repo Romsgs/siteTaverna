@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title></title>
+    <!-- <link rel='stylesheet' href='stylesheets/headerStyle.css' /> -->
+    <link rel='stylesheet' href='stylesheets/bodyStyle.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <%- include('./partials/header') %>
+    <main>
+      <h2>Bem Vindo</h2> ao novo site da banda <b>banda Taverna!</b>
+      <b>crie logo sua conta</b> e comece a explorar este novo universo!
+      <hr>
+      
+        <button><a href="/cadastrar">CRIAR CONTA</a></button>
+      
+      
+    </main>
+    <%- include('./partials/footer')%>
   </body>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='stylesheets/bodyStyle.css' />
+    <link rel="stylesheet" href="stylesheets/loginStyle.css">
+  </head>
+  <body>
+    <%- include('./partials/header')%>
+    <main>
+      <h1>Logar</h1>
+      <form action="/cadastrar" method="POST">
+        <label>
+          <input type="text" placeholder="e-m@il" name="email">
+          <img src="img/icons/i.png" alt="Informação sobre a senha" style="width: 30px;">
+        </label>
+        <label>
+          <input type="password" placeholder="senha" name="senha">
+          <img src="img/icons/i.png" alt="Informação sobre a senha" style="width: 30px;">
+        </label>
+        <button type="submit">Logar</button>
+      </form>
+    </main>
+    <%- include('./partials/footer')%>
+  </body>
+</html>
