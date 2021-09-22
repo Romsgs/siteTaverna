@@ -47,3 +47,11 @@ button {
 ::placeholder{
     color:darkgoldenrod;
 }
+
+/* @media screen and (max-width: 1350) {
+  input{
+    width:90%;
+    margin-bottom: 30px;
+  }
+  
+} */

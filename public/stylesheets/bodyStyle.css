@@ -65,3 +65,27 @@ label {
   margin-bottom: 30px;
   
 }
+@media screen and (max-width: 1336){
+  main{
+    margin-top: 180px;
+    font-size: x-large;
+    background-color:rgba(128, 128, 128, 0.8);
+    width: 80%;
+    position: relative;
+    top: -550px;
+    height: fit-content;
+  }
+  
+}
+@media screen and (max-width: 980px){
+  main{
+    margin-top: 180px;
+    font-size: x-large;
+    background-color:rgba(128, 128, 128, 0.8);
+    width: 80%;
+    position: relative;
+    top: -150px;
+    height: fit-content;
+  }
+  
+}

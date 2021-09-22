@@ -14,4 +14,5 @@ router.post('/cadastro', body('email').notEmpty().isEmail(), body('senha').notEm
 router.post('/login', body('email').notEmpty().isEmail(), body('senha').notEmpty(), controller.verificaLogin)
 router.get('/perfil', controller.mostrarPerfil)
 router.get('/media', controller.media)
+router.get('/audio', controller.media)
 module.exports = router;
