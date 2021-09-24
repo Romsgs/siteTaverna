@@ -132,8 +132,8 @@ a{
   body{
 
     
-    background-image: url('../img/tavernawide.jpg');
-    background-size:cover;
+    background-image: none;
+    background-size:contain;
     top: 50px;
     background-position: top;
     background-repeat: no-repeat;
