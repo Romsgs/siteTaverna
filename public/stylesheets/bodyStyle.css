@@ -65,6 +65,27 @@ label {
   margin-bottom: 30px;
   
 }
+#icones{
+  height: 200px;
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  color: antiquewhite;
+  font-size: xx-large;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.MediaIcones{
+  width: 50px;
+  
+}
+#MediaContainer{
+  width: 30%;
+  height: 400px;
+  align-self: center;
+}
 @media screen and (max-width: 1336){
   main{
     margin-top: 180px;

@@ -10,8 +10,10 @@
   <body>
     <%- include('./partials/header') %>
     
-      <iframe src="https://open.spotify.com/embed/artist/4E2XVEYULgAjCObKNyuZim" width="30%" height="400" frameBorder="0" allowtransparency="true" allow="encrypted-media" style="border-radius: 15px;margin-top: 50px;margin-bottom: 50px; align-self: center;"></iframe>
-      <button style="font-size: xx-large;"><a>Videos</a></button>
+      <div id="MediaContainer"></div>
+      <div id="icones">Ouvir no: <a href=""><img id="appleIcone" class="MediaIcones" src="img/icons/apple.png" alt=""></a> <a href=""><img id="deezerIcone" class="MediaIcones" src="img/icons/deezer.png" alt=""></a> <a href=""><img id="spotifyIcone" class="MediaIcones" src="img/icons/spotify.png" alt=""></a> <a href=""><img id="amazonIcone" class="MediaIcones" src="img/icons/amazon.png" alt=""></a></div>
+      <button style="font-size: xx-large;"><a href="https://www.youtube.com/c/BandaTaverna/playlists">Videos</a></button>
     <%- include('./partials/footer')%>
   </body>
+  <script src="javascripts/mediaIcones.js"></script>
 </html>
