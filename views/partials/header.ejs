@@ -1,26 +1,34 @@
 <header>
   <link rel='stylesheet' href='stylesheets/headerStyle.css' />
     <nav>
+      
       <div id="logo">
         <img id="logoHeader" src="img/Tzinho.png" alt="">
       </div>
+
+      <div id="login">
+        <ul>
+          <li><a href="/login"><%= usuario %></a></li>
+          <% if(!usuario ){ %>
+          <li><a href="/cadastrar"><p>-</p>cadastrar</a></li>
+          <% } %>
+        </ul>
+      </div>
+
       <div id="menu">
         <ul>
-          <li><a href="/">home</a></li> <p>-</p>
-          <li><a href="/abanda">a banda</a></li> <p>-</p>
-          <li><a href="">merchandise</a></li><p>-</p>
-          <li><a href="/media">média</a></li><p>-</p>
-          <li><a href="">agenda</a></li><p>-</p>
-          <li><a href="">eventos</a></li><p>-</p>
+          <li><a href="/">home</a></li> 
+          <li><a href="/abanda">A banda</a></li> 
+          <li><a href="">merchan</a></li>
+          <li><a href="/media">média</a></li>
+          <li><a href="">agenda</a></li>
+          <li><a href="">eventos</a></li>
           <li><a href="/contato">contato</a></li>
+          <li><a href="/contato">pressKit</a></li>
         </ul>
       </div>
       
-      <div id="login">
-        <ul>
-          <li><a href="/login">Login</a></li><p>-</p>
-          <li><a href="/cadastrar">cadastrar</a></li>
-        </ul>
-      </div>
+      
+      
     </nav>
   </header>

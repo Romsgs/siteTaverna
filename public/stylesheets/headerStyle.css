@@ -25,24 +25,28 @@ body{
 header{
   color: rgb(150, 34, 0);
   width: 100%;
+  align-items: center;
 }
 nav {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   height: 100px;
   width: 100%;
   /* background-color: #cd853fe6; */
   background-color: rgba(252, 181, 101,0.6);
   justify-content: space-between;
+  align-items: center;
   border-bottom: 4px double rgba(35, 0, 0);
 
 }
 #menu{
-  height: 100%;
+  margin-top: 20px;
+  width: 100%;
   display: flex;
   /* width: 650px; */
   align-self: center;
-  align-items:flex-end;
+  /* align-items:center; */
   justify-content: space-around;
   font-family: 'sans-serif';
   font-size:x-large;
@@ -59,8 +63,9 @@ ul{
   flex-wrap: wrap;
 }
 li{
-  /* margin-right: 30px; */
-  margin-bottom: 30px;
+  
+  margin-right: 30px;
+  /* margin-bottom: 30px; */
   flex-grow: 1;
 }
 p{
@@ -68,17 +73,18 @@ p{
   margin-right: 15px;
 }
 #login{
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items:flex-end;
   justify-content: space-around;
-  margin-bottom: 15px;
-  margin-right: 30px;
+  /* margin-bottom: 15px;
+  margin-right: 30px; */
   font-family: 'Elementary_Gothic_Bookhand';
   font-size: 40px;
 }
 #logo{
-  position:relative;
+  position:absolute;
   top: 38px;
   left: 100px;
   width: 120px;
@@ -103,32 +109,34 @@ p{
   font-family: "dumbledore";
   src: url("../fontes/dum1/dum1.ttf");
 }
-
+/* -------------------------- tamanho laptop pequeno --------------------------------------- */
 a{
   text-decoration: none;
 }
 @media screen and (max-width: 1352px){
-  nav{
+  /* nav{
     display: inline-block;
-  }
+  }  */
   #logo{
-    position: relative;
-    left:25px;
+    top: 38px;
+  left: 25px;
     
   }
   #menu{
     
     position: relative;
-    top: -150px;
+    top: 0px;
     font-size: x-large;
   }
   #login{
     position: relative;
-    top: -160px;
+    top: 0px;
     justify-content: none;
   }
 }
-@media screen and (max-width: 980px){
+
+/* -------------------------------Tamanho de Celular----------------------------------------------- */
+@media screen and (max-width: 1080px){
   body{
 
     
@@ -139,41 +147,71 @@ a{
     background-repeat: no-repeat;
     /* background-position: -150px; */
     background-blend-mode: luminosity;
-    
+    font-size: xx-large;
 }
 nav{
-  display: inline-block;
-  height: 300px;
+  font-size: xx-large;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  height: 350px;
   align-items: center;
   justify-content: center;
   padding: 10px;
 }
 #logo{
+  position:static;
+  /* align-self: center;
+  justify-self: center; */
+  /* position: absolute; */
+  /* top: 0; */
   
-  margin-left: 40%;
-  margin-bottom: 30px;
+  /* margin-top: 50px; */
+  /* margin-left: 28%; */
+  /* margin-bottom: 30px; */
   
+}
+#logoHeader{
+  /* width: 170px; */
+  position: relative;
+  /* top:28px;
+  left:20px; */
+
 }
 ul{
+  font-size: xx-large;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
+  align-items: center;
 }
 li{
-  margin: 0;
+  /* position: absolute;
+  top:280px; */
+  
+  margin: 10px;
+  height: 20px;
   font-size: xx-large;
+  
 }
   #menu{
-
-    width: 100%;
+    position: static;
     position: relative;
-    top: -180px;
-    align-self: center;
+    top:0px;
+    width: 100%;
+    /* position: absolute;
+    top: 200px; */
+    /* align-self: center; */
   }
 
 #login{
-  width: 100%;
+  position: static;
   position: relative;
-    top: -170px;
+  top:10px;
+  width: 100%;
+  /* position: relative;
+    top: -170px; */
     font-weight: bold;
     font-size: xx-large;
 }

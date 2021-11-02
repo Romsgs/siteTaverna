@@ -15,11 +15,12 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(session({secret:'Tarvernas', resave:false, saveUninitialized:true}))
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', router);
-app.use(session({secret:'frase secreta'}))
+
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   next(createError(404));
