@@ -12,9 +12,9 @@
       <h2>Bem Vindo</h2> ao novo site da banda banda Taverna!<br>
       "crie logo sua conta" e comece a explorar este novo universo!
       <hr>
-      
+        <%if(usuario == "login"){%>
         <button><a href="/cadastrar">CRIAR CONTA</a></button>
-      
+          <%}%>
       
     </main>
     <%- include('./partials/footer')%>

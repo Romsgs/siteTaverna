@@ -23,3 +23,8 @@ footer{
 
     
 }
+@media screen and (max-width: 1080px){
+    #icones{
+        width: 90%;
+    }
+}

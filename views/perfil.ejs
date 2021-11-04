@@ -4,16 +4,26 @@
     <title></title>
     <!-- <link rel='stylesheet' href='stylesheets/headerStyle.css' /> -->
     <link rel='stylesheet' href='stylesheets/bodyStyle.css' />
+    <link rel='stylesheet' href='stylesheets/perfilStyle.css' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   </head>
     <body>
       <%- include('./partials/header') %>
         
           <main>
             
-            
+            <table>
+              <tr>
+                <th id="avatar"><img id="avatarParfil" src="<%= user.avatar %>" alt=""></th>
+                <th id="nome"><%= user.nome %></th>
+                <th id="email"><%= user.email %></th>
+              </tr>
+            </table>
+            <button id="editar">Editar</button>
           </main>
         </div>
       <%- include('./partials/footer')%>
+      <script src="./perfilCRUD.js"> </script>
     </body>
 </html>

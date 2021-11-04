@@ -8,10 +8,18 @@
 
       <div id="login">
         <ul>
-          <li><a href="/login"><%= usuario %></a></li>
-          <% if(!usuario ){ %>
-          <li><a href="/cadastrar"><p>-</p>cadastrar</a></li>
-          <% } %>
+          <!-- se a variavel usuario vier como 'login' mostra o botao de login -->
+          <% if( usuario == 'login'){ %>
+          <li><a href="/login">Login</a></li>
+          <% } else { %>
+            <li><a href="/perfil"><%=usuario%></a></li>
+            <%}%>
+            <!-- se o usuario for 'login' mostra o cadastrar -->
+          <% if(usuario == 'login'){ %>
+          <li><a href="/cadastrar">cadastrar</a></li>
+          <% } else { %>
+            <li><a href="/deslogar">deslogar</a></li>
+            <%}%>
         </ul>
       </div>
 

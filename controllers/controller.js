@@ -6,7 +6,7 @@ const session = require('express-session');
 const { render } = require('../app');
 const saltRounds = 10;
 const cookieParser = require('cookie-parser')
-
+const jwt = require('jsonwebtoken')
 
 
 module.exports = {
@@ -39,19 +39,26 @@ module.exports = {
         
     },
     login: async (req,res)=>{
-        let {senha, email} = req.body;
-        let usuario = await Usuario.findOne({where:{'email':req.sessions.email}})
-        let senhaOK = bcrypt.compareSync(senha, usuario.senha)
-        sessions.email = email;
-        res.render('login')   
+        
+        
+        res.render('login', {usuario:'login'})
     },
-    verificaLogin:(req, res)=>{
-        if(session.email){
-            let usuario = Usuario.findOne({where:{'email':req.sessions.email}})
-            res.render('index', {usuario: usuario.email})
+    verificaLogin:async (req, res)=>{
+        // captura as infos nos campos senha e email do form na view login
+        const {senha, email} = req.body;
+                
+        //captura o usuario que coincide com o email
+        const usuario = await Usuario.findOne({where:{'email': email}}) 
+        const senhaOK = bcrypt.compareSync(senha, usuario.senha)  
+        req.cookies.email = email;
+        usuario.senha = null
+        if(senhaOK){
+            res.render('perfil',{usuario:req.cookies.email, user:usuario.toJSON()})    
         } else {
-            res.render('login')
+            res.render('index', {usuario: 'login'})
         }
+        
+        
         
     },
     cadastrar:(req, res)=>{
@@ -74,6 +81,8 @@ module.exports = {
         
         //pega a senha e encriptografa ela
         senhaHash = bcrypt.hashSync(senha, saltRounds);
+
+        
         // tenta cadastrar um usuario e se o banco de dados aceitar ele cadastra, se não o catch da o erro
         try{
             await Usuario.create({nome:"Fulanin", sobrenome:"Taverna", email:email, senha:senhaHash, avatar:'/img/T.png' });
@@ -82,12 +91,15 @@ module.exports = {
         
         catch(erro){
             res.status(403).render('/index', {usuario:n})//{"msg":"ja existe este usuario", "Leitura do erro":erro})
-        }    
-        
-        
+        }
+        let usuario = await Usuario.findOne({where:{email:email}})
+        // let token = jwt.sign(usuario.toJSON(), senhaHash)
+        // req.cookie.token = token
         res.render('index', {usuario: req.cookies.email});
     },
     mostrarPerfil: (req,res) =>{
+        const usuario = Usuario.findOne({where: {email:req.cookies.email}})
+
         try{
             req.cookies.email ?    res.render('perfil', {usuario: req.cookies.email}) : res.render('perfil', {usuario:'login'})
            } catch (err) {
@@ -101,5 +113,12 @@ module.exports = {
                console.log(err)
            }
         
+    },
+    deslogar: (req, res)=> {
+        // req.sessions.destroy();
+        // res.session.destroy();
+        res.clearCookie('token')
+        res.clearCookie('email')
+        res.render('index', {usuario: 'login'})
     }
 }

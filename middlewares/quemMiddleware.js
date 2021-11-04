@@ -1,5 +1,5 @@
 const auth = (req,res,next) =>{
-    if (typeof(req.session.user) != "undefined"){
+    if (typeof(req.cookie.email) != "undefined"){
         next();
     } else{
         res.redirect("/login?error=usuarionaologado");
