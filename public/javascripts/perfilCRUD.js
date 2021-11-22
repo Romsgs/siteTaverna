@@ -1,4 +1,4 @@
-const {Usuario} = require('../../database/models')
+//const {Usuario} = require('../../database/models')
 
 let botaoEditar = document.getElementById('editar')
 let nome = document.getElementById('nome')

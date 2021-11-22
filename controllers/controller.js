@@ -101,7 +101,7 @@ module.exports = {
         const usuario = Usuario.findOne({where: {email:req.cookies.email}})
 
         try{
-            req.cookies.email ?    res.render('perfil', {usuario: req.cookies.email}) : res.render('perfil', {usuario:'login'})
+            req.cookies.email ?    res.render('perfil', {usuario: req.cookies.email, user:usuario}) : res.render('perfil', {usuario:'login'})
            } catch (err) {
                console.log(err)
            }
