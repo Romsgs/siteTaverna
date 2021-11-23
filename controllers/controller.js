@@ -67,7 +67,7 @@ module.exports = {
         res.render('cadastrar')
     },
     cadastraUsuario: async (req, res) => {
-    
+        
         // criando as variaveis que vierem do form ao body
         const { email, senha } = req.body;
         // mostrando a o email capturado do body no console
@@ -95,7 +95,7 @@ module.exports = {
         let usuario = await Usuario.findOne({where:{email:email}})
         // let token = jwt.sign(usuario.toJSON(), senhaHash)
         // req.cookie.token = token
-        res.render('index', {usuario: req.cookies.email});
+        res.render('index', {usuario: email});
     },
     mostrarPerfil: (req,res) =>{
         const usuario = Usuario.findOne({where: {email:req.cookies.email}})
